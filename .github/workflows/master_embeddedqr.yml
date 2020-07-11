@@ -22,8 +22,8 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        python -m venv env
-        env\Scripts\activate
+        python3 -m venv env
+        source env/bin/activate
         pip install -r requirements.txt
     - name: Zip the application files
       run: zip -r myapp.zip .
@@ -33,5 +33,5 @@ jobs:
       with:
         app-name: 'embeddedqr'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c7ea1175d26a47039d0e20914a4b4c40 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1309ac3672b041348155423020facd23 }}
         package: './myapp.zip'
